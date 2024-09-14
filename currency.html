@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Reais para JO$</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin-top: 50px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Reais para Jantar no Oro (JO$)</h1>
+        <input type="number" id="reais" placeholder="Digite o valor em R$">
+        <button onclick="converter()">Converter</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        const taxaConversao = 0.0006; // Exemplo: 1 Real = 2.5 JO$
+
+        function converter() {
+            const reais = document.getElementById('reais').value;
+            const jo = reais * taxaConversao;
+            document.getElementById('resultado').innerHTML = `Você tem JO$ ${jo.toFixed(2)}!`;
+        }
+    </script>
+</body>
+</html>
